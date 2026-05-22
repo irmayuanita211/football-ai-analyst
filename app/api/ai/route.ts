@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+const GROQ_API_KEY = process.env.GROQ_API_KEY;
 
 function getMockAIResponse(prompt: string): string {
   const lowerPrompt = prompt.toLowerCase();
@@ -90,28 +90,21 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Prompt is required' }, { status: 400 });
     }
 
-    if (OPENROUTER_API_KEY) {
+    if (GROQ_API_KEY) {
       const messages = [];
-
       if (system) {
         messages.push({ role: 'system', content: system });
       }
+      messages.push({ role: 'user', content: prompt });
 
-      messages.push({
-        role: 'user',
-        content: prompt,
-      });
-
-      const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+      const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${OPENROUTER_API_KEY}`,
+          'Authorization': `Bearer ${GROQ_API_KEY}`,
           'Content-Type': 'application/json',
-          'HTTP-Referer': 'https://football-ai-analyst.vercel.app',
-          'X-Title': 'Football AI Analyst',
         },
         body: JSON.stringify({
-          model: 'meta-llama/llama-3.1-8b-instruct:free',
+          model: 'llama-3.3-70b-versatile',
           messages,
           max_tokens: 1024,
           temperature: 0.7,
@@ -120,12 +113,11 @@ export async function POST(request: NextRequest) {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error?.message || 'OpenRouter API error');
+        throw new Error(errorData.error?.message || 'Groq API error');
       }
 
       const data = await response.json();
       const content = data.choices[0]?.message?.content || '';
-
       return NextResponse.json({ content });
     }
 
