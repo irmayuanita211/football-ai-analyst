@@ -2,8 +2,8 @@
 
 > AI-powered football analysis dashboard with live scores, match predictions, player analysis, and more.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/deploy-status)](https://app.netlify.com/sites/stellar-mochi-02fec0/deploys)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-00C7B7?logo=netlify)](https://stellular-mochi-02fec0.netlify.app/)
+[![Netlify](https://img.shields.io/badge/Netlify-Deployed-00C7B7?logo=netlify&logoColor=white)](https://stellular-mochi-02fec0.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Try%20Now-00C7B7?logo=netlify)](https://stellular-mochi-02fec0.netlify.app/)
 
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwindcss)
@@ -169,3 +169,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 Built with ❤️ for football fans everywhere ⚽
+
+---
+
+**by [irmayuanita211](https://github.com/irmayuanita211)**
