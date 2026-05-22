@@ -2,6 +2,9 @@
 
 > AI-powered football analysis dashboard with live scores, match predictions, player analysis, and more.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/deploy-status)](https://app.netlify.com/sites/stellar-mochi-02fec0/deploys)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-00C7B7?logo=netlify)](https://stellular-mochi-02fec0.netlify.app/)
+
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8?logo=tailwindcss)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178c6?logo=typescript)
@@ -118,7 +121,7 @@ User → Next.js Page → /api/football → football-data.org API
 
 ### AI Features Flow
 ```
-User Input → /api/ai → OpenRouter API (Llama 3.1 8B)
+User Input → /api/ai → Groq API (Llama 3.3 70B)
                       ↓ (no key?)
                       → Mock AI Response (context-aware)
 ```
